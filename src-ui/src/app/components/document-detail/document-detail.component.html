@@ -301,6 +301,15 @@
           </ng-template>
         </li>
 
+        <li [ngbNavItem]="DocumentDetailNavIDs.Notes">
+          <a class="text-nowrap" ngbNavLink i18n>Chat @if (document?.notes.length) {
+            <span class="badge text-bg-secondary ms-1">{{document.notes.length}}</span>
+          }</a>
+          <ng-template ngbNavContent>
+            <pngx-document-notes [documentId]="documentId" [notes]="document?.notes" [addDisabled]="!userCanEdit" (updated)="notesUpdated($event)"></pngx-document-notes>
+          </ng-template>
+        </li>
+
         <li [ngbNavItem]="DocumentDetailNavIDs.Preview" class="d-md-none">
           <a ngbNavLink i18n>Preview</a>
           @if (!pdfPreview.offsetParent) {
