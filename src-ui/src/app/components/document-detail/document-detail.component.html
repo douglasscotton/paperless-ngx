@@ -301,10 +301,10 @@
           </ng-template>
         </li>
 
-        <li>
-          <a class="Chat">Chat</a>
+        <li class="d-md-none">
+          <a href="" ngbnavlink="" class="nav-link" id="ngb-nav-99" role="tab" aria-selected="false" aria-disabled="false" tabindex="-1">Chat</a>
         </li>
-
+        
         <li [ngbNavItem]="DocumentDetailNavIDs.Preview" class="d-md-none">
           <a ngbNavLink i18n>Preview</a>
           @if (!pdfPreview.offsetParent) {
