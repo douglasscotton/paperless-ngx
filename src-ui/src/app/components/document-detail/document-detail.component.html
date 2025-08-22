@@ -232,6 +232,16 @@
           </ng-template>
         </li>
 
+        <li [ngbNavItem]="DocumentDetailNavIDs.Content">
+          <a ngbNavLink i18n>Chat</a>
+          <ng-template ngbNavContent>
+            <div>
+              <iframe src="chat.html" name="mi_marco" width="600" height="400"></iframe>
+            </div>
+          </ng-template>
+        </li>
+
+
         <li [ngbNavItem]="DocumentDetailNavIDs.Metadata">
           <a ngbNavLink i18n>Metadata</a>
           <ng-template ngbNavContent>
