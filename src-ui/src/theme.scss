@@ -1,7 +1,7 @@
 @use "sass:color";
 @mixin paperless-green {
   // base color e.g. #17541f = hsl(128, 57%, 21%)
-  --pngx-primary: 128, 57%;
+  --pngx-primary: 250, 57%;
   --pngx-primary-lightness: 21%;
 }
 
@@ -18,8 +18,8 @@
   --pngx-primary-darken-15: hsl(var(--pngx-primary), calc(var(--pngx-primary-lightness) - 15%));
   --pngx-primary-darken-18: hsl(var(--pngx-primary), calc(var(--pngx-primary-lightness) - 18%));
   --pngx-primary-darken-27: hsl(var(--pngx-primary), calc(var(--pngx-primary-lightness) - 27%));
-  --pngx-success-darken-10: hsl(152, 69%, 11%); // based on success #198754
-  --pngx-bg-alt: #fff;
+  --pngx-success-darken-10: hsl(253, 68%, 11%); // based on success #198754
+  --pngx-bg-alt: #2f309e;
   --pngx-bg-darker: var(--bs-gray-100);
   --pngx-bg-alt2: var(--bs-gray-200); // #e9ecef
   --pngx-bg-disabled: #f7f7f7;

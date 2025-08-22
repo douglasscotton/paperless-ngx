@@ -10,17 +10,33 @@
     tourAnchor="tour.intro">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198.43 238.91" width="1em" height="1.5em" fill="currentColor">
       <path
-        d="M194.7,0C164.22,70.94,17.64,79.74,64.55,194.06c.58,1.47-10.85,17-18.47,29.9-1.76-6.45-3.81-13.48-3.52-14.07,38.11-45.14-27.26-70.65-30.78-107.58C-4.64,131.62-10.5,182.92,39,212.53c.3,0,2.64,11.14,3.81,16.71a58.55,58.55,0,0,0-2.93,6.45c-1.17,2.93,7.62,2.64,7.62,3.22.88-.29,21.7-36.93,22.28-37.23C187.67,174.72,208.48,68.6,194.7,0ZM134.61,74.75C79.5,124,70.12,160.64,71.88,178.53,53.41,134.85,107.64,86.77,134.61,74.75ZM28.2,145.11c10.55,9.67,28.14,39.28,13.19,56.57C44.91,193.77,46.08,175.89,28.2,145.11Z"
+        d="M802 1885 c-241 -46 -444 -173 -578 -362 -155 -216 -200 -505 -120
+-759 l24 -74 -20 -53 c-29 -76 -22 -156 18 -198 42 -44 72 -57 167 -72 71 -12
+92 -20 133 -51 65 -50 212 -120 299 -142 52 -14 105 -19 210 -18 120 0 154 4
+239 28 163 44 284 119 401 246 l60 65 -65 -61 c-157 -146 -309 -213 -530 -234
+-120 -11 -234 5 -346 50 -82 33 -207 108 -199 120 3 4 26 11 52 15 27 4 107
+26 179 50 422 138 881 453 1104 755 92 125 115 178 115 272 0 91 -16 121 -87
+156 -59 30 -139 38 -221 22 l-66 -12 -68 56 c-38 30 -96 71 -128 91 -162 97
+-400 143 -573 110z m406 -65 c40 -11 108 -38 151 -59 74 -38 181 -114 181
+-129 0 -4 -43 -21 -95 -36 -53 -16 -94 -31 -91 -33 2 -2 28 3 57 11 30 9 78
+20 107 26 51 9 53 9 85 -23 17 -18 21 -20 8 -5 -14 15 -21 31 -17 35 15 15
+164 6 217 -13 72 -26 93 -55 85 -119 -23 -203 -344 -508 -819 -780 -189 -108
+-376 -188 -551 -235 -109 -29 -119 -27 -163 25 -54 64 -141 211 -149 251 -7
+37 -1 45 124 194 58 69 55 66 -38 -29 -74 -74 -105 -100 -110 -90 -17 27 -33
+185 -27 269 16 219 129 436 299 577 104 86 261 159 396 183 78 15 268 4 350
+-20z m-1044 -1208 c8 -15 39 -62 70 -105 52 -73 54 -77 31 -77 -39 0 -102 30
+-119 55 -16 25 -21 91 -10 133 8 28 10 28 28 -6z"/>
+      <path d="M434 1028 l-19 -23 23 19 c21 18 27 26 19 26 -2 0 -12 -10 -23 -22z"/>
         transform="translate(0 0)" />
     </svg>
     <div class="ms-2 ms-md-3 d-inline-block" [class.d-md-none]="slimSidebarEnabled">
       @if (customAppTitle?.length) {
         <div class="d-flex flex-column align-items-start custom-title">
           <span class="title">{{customAppTitle}}</span>
-          <span class="byline text-uppercase font-monospace" i18n>by Paperless-ngx</span>
+          <span class="byline font-monospace" i18n>by arcs2Blue</span>
         </div>
       } @else {
-        Paperless-ngx
+        arcs2Blue
       }
     </div>
   </a>
@@ -55,7 +71,7 @@
         </a>
         <div class="dropdown-divider"></div>
         <a ngbDropdownItem class="nav-link" target="_blank" rel="noopener noreferrer"
-          href="https://docs.paperless-ngx.com">
+          href="https://www.arcs2blue.com">
           <i-bs class="me-2" name="question-circle"></i-bs><ng-container i18n>Documentation</ng-container>
         </a>
       </div>
@@ -108,16 +124,15 @@
                 <li class="nav-item w-100 app-link" cdkDrag [cdkDragDisabled]="!settingsService.organizingSidebarSavedViews"
                   cdkDragPreviewContainer="parent" cdkDragPreviewClass="navItemDrag" (cdkDragStarted)="onDragStart($event)"
                   (cdkDragEnded)="onDragEnd($event)">
-                  <a class="nav-link" routerLink="view/{{view.id}}"
+                  <a class="nav-link" [class.text-truncate]="!slimSidebarEnabled" routerLink="view/{{view.id}}"
                     routerLinkActive="active" (click)="closeMenu()" [ngbPopover]="view.name"
                     [disablePopover]="!slimSidebarEnabled" placement="end" container="body" triggers="mouseenter:mouseleave"
                     popoverClass="popover-slim">
-                    <i-bs class="me-1" name="funnel"></i-bs>
-                      <span>&nbsp;<div class="d-inline-flex view-name"><span [class.text-truncate]="!slimSidebarEnabled">{{view.name}}</span></div>
-                        @if (showSidebarCounts && !slimSidebarEnabled) {
-                          <span class="badge bg-info text-dark ms-2 d-inline">{{ savedViewService.getDocumentCount(view) }}</span>
-                        }
-                      </span>
+                    <i-bs class="me-1" name="funnel"></i-bs><span>&nbsp;{{view.name}}
+                      @if (showSidebarCounts && !slimSidebarEnabled) {
+                        <span><span class="badge bg-info text-dark ms-2 d-inline">{{ savedViewService.getDocumentCount(view) }}</span></span>
+                      }
+                    </span>
                     @if (showSidebarCounts && slimSidebarEnabled) {
                       <span class="badge bg-info text-dark position-absolute top-0 end-0 d-none d-md-block">{{ savedViewService.getDocumentCount(view) }}</span>
                     }
@@ -294,7 +309,7 @@
             }
             <li class="nav-item mt-2" tourAnchor="tour.outro">
               <a class="px-3 py-2 text-muted small d-flex align-items-center flex-wrap text-decoration-none"
-                target="_blank" rel="noopener noreferrer" href="https://docs.paperless-ngx.com" ngbPopover="Documentation"
+                target="_blank" rel="noopener noreferrer" href="https://www.arcs2Blue.com" ngbPopover="Documentation"
                 i18n-ngbPopover [disablePopover]="!slimSidebarEnabled" placement="end" container="body"
                 triggers="mouseenter:mouseleave" popoverClass="popover-slim">
                 <i-bs class="d-flex" name="question-circle"></i-bs><span class="ms-1">&nbsp;<ng-container i18n>Documentation</ng-container></span>
@@ -303,22 +318,19 @@
             <li class="nav-item" [class.visually-hidden]="slimSidebarEnabled">
               <div class="px-3 py-0 text-muted small d-flex align-items-center flex-wrap">
                 <div class="me-3">
-                  <a class="text-muted text-decoration-none" target="_blank" rel="noopener noreferrer"
-                    href="https://github.com/paperless-ngx/paperless-ngx" ngbPopover="GitHub" i18n-ngbPopover
-                    [disablePopover]="!slimSidebarEnabled" placement="end" container="body"
-                    triggers="mouseenter:mouseleave" popoverClass="popover-slim">
+                  <a>
                     {{ versionString }}
                   </a>
                 </div>
                 @if (!settingsService.updateCheckingIsSet || appRemoteVersion) {
                   <div class="version-check">
                     <ng-template #updateAvailablePopContent>
-                      <span class="small">Paperless-ngx {{ appRemoteVersion.version }} <ng-container i18n>is
+                      <span class="small">arcs2Blue CM.ai {{ appRemoteVersion.version }} <ng-container i18n>is
                           available.</ng-container><br /><ng-container i18n>Click to view.</ng-container></span>
                     </ng-template>
                     <ng-template #updateCheckingNotEnabledPopContent>
                       <p class="small mb-2">
-                        <ng-container i18n>Paperless-ngx can automatically check for updates</ng-container>
+                        <ng-container i18n>arcs2Blue CM.ai can automatically check for updates</ng-container>
                       </p>
                       <div class="btn-group btn-group-xs flex-fill w-100">
                         <button class="btn btn-outline-primary" (click)="setUpdateChecking(true)">Enable</button>
