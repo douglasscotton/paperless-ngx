@@ -11,6 +11,18 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
+
+<script>
+  function toggleIframe() {
+    var iframe = document.getElementById("meuIframe");
+    if (iframe.style.display === "none") {
+      iframe.style.display = "block";
+    } else {
+      iframe.style.display = "none";
+    }
+  }
+</script>
+
 <body>
   <pngx-root></pngx-root>
 </body>
