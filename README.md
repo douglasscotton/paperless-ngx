@@ -15,6 +15,18 @@
 
 <!-- omit in toc -->
 
+# Paperless-ngx Custom
+
+Este repositório é um fork do [paperless-ngx](https://github.com/paperless-ngx/paperless-ngx)  
+com modificações específicas para incluir visualização externa de documentos via iframe.
+
+## Licença
+Os arquivos modificados ou adicionados neste repositório são distribuídos sob a 
+[Mozilla Public License 2.0](LICENSE_MPL-2.0.txt).
+
+Arquivos não modificados seguem a licença original do projeto upstream.
+
+
 # Paperless-ngx
 
 Paperless-ngx is a document management system that transforms your physical documents into a searchable online archive so you can keep, well, _less paper_.
