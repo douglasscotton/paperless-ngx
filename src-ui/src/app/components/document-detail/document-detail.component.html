@@ -434,31 +434,32 @@
       </div>
     }
   }
-</ng-template>
 
-<style>
-  #meuIframe {
-    width: 500px;
-    height: 300px;
-    border: 1px solid black;
-    display: none; /* Começa escondido */
-    position: fixed; /* Ou absolute, dependendo da necessidade */
-    top: 50px;
-    left: 50px;
-  }
-</style>
-
-<a onclick="toggleIframe()">Abrir/Fechar iFrame</a>
-
-<iframe id="meuIframe" src="https://www.arcs2blue.com" ></iframe>
-
-<script>
-  function toggleIframe() {
-    var iframe = document.getElementById("meuIframe");
-    if (iframe.style.display === "none") {
-      iframe.style.display = "block";
-    } else {
-      iframe.style.display = "none";
+  <style>
+    #meuIframe {
+      width: 500px;
+      height: 300px;
+      border: 1px solid black;
+      display: none; /* Começa escondido */
+      position: fixed; /* Ou absolute, dependendo da necessidade */
+      top: 50px;
+      left: 50px;
     }
-  }
-</script>
+  </style>
+  
+  <a onclick="toggleIframe()">Abrir/Fechar iFrame</a>
+  
+  <iframe id="meuIframe" src="https://www.arcs2blue.com" ></iframe>
+  
+  <script>
+    function toggleIframe() {
+      var iframe = document.getElementById("meuIframe");
+      if (iframe.style.display === "none") {
+        iframe.style.display = "block";
+      } else {
+        iframe.style.display = "none";
+      }
+    }
+  </script>
+  
+</ng-template>
