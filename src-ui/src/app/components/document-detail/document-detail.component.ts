@@ -174,6 +174,16 @@ export enum ZoomSetting {
     PdfViewerModule,
   ],
 })
+
+export class DocumentDetailComponent implements OnInit {
+  mostrarIframe = false;
+
+  ngOnInit() {
+    console.log("Abrindo documento com ID:", this.document.id);
+  }
+}
+
+
 export class DocumentDetailComponent
   extends ComponentWithPermissions
   implements OnInit, OnDestroy, DirtyComponent

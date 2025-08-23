@@ -1,6 +1,3 @@
-<a onclick="toggleIframe()">Chat</a>
-<iframe id="meuIframe" src="chat.html" ></iframe>
-
 <pngx-page-header [(title)]="title">
   @if (archiveContentRenderType === ContentRenderType.PDF && !useNativePdfViewer) {
     @if (previewNumPages) {
@@ -432,3 +429,23 @@
     }
   }
 </ng-template>
+
+<hr>
+<h3>Documento Externo</h3>
+
+<!-- Botão para abrir -->
+<button
+  class="btn btn-primary"
+  (click)="mostrarIframe = !mostrarIframe">
+  {{ mostrarIframe ? 'Fechar Documento Externo' : 'Abrir Documento Externo' }}
+</button>
+
+<!-- Iframe visível só quando clicar -->
+<div *ngIf="mostrarIframe" style="margin-top: 1rem;">
+  <iframe
+    [src]="'chat.html/' + document.id | safeUrl"
+    width="100%"
+    height="600"
+    style="border:1px solid #ccc; border-radius:8px;">
+  </iframe>
+</div>
