@@ -1,3 +1,9 @@
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+
 <pngx-page-header [(title)]="title">
   @if (archiveContentRenderType === ContentRenderType.PDF && !useNativePdfViewer) {
     @if (previewNumPages) {
@@ -430,22 +436,39 @@
   }
 </ng-template>
 
-<hr>
-<h3>Documento Externo</h3>
 
-<!-- Botão para abrir -->
-<button
-  class="btn btn-primary"
-  (click)="mostrarIframe = !mostrarIframe">
-  {{ mostrarIframe ? 'Fechar Documento Externo' : 'Abrir Documento Externo' }}
-</button>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Abrir/Fechar iFrame com Link</title>
+<style>
+  #meuIframe {
+    width: 500px;
+    height: 300px;
+    border: 1px solid black;
+    display: none; /* Começa escondido */
+    position: fixed; /* Ou absolute, dependendo da necessidade */
+    top: 50px;
+    left: 50px;
+  }
+</style>
+</head>
+<body>
 
-<!-- Iframe visível só quando clicar -->
-<div *ngIf="mostrarIframe" style="margin-top: 1rem;">
-  <iframe
-    [src]="'chat.html/' + document.id | safeUrl"
-    width="100%"
-    height="600"
-    style="border:1px solid #ccc; border-radius:8px;">
-  </iframe>
-</div>
+<a onclick="toggleIframe()">Abrir/Fechar iFrame</a>
+
+<iframe id="meuIframe" src="https://www.arcs2blue.com" ></iframe>
+
+<script>
+  function toggleIframe() {
+    var iframe = document.getElementById("meuIframe");
+    if (iframe.style.display === "none") {
+      iframe.style.display = "block";
+    } else {
+      iframe.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>
