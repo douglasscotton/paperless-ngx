@@ -228,6 +228,7 @@
           <ng-template ngbNavContent>
             <div>
               <textarea class="form-control" id="content" rows="20" formControlName='content' [class.rtl]="isRTL"></textarea>
+              <a href="chat.html" target="_blank">Chat</a>
             </div>
           </ng-template>
         </li>
@@ -303,10 +304,6 @@
             </ng-template>
           }
         </li>
-
-        <a href="sua-pagina.html" target="_blank">
-          <button>Chat</button>
-        </a>
           
         @if (notesEnabled) {
           <li [ngbNavItem]="DocumentDetailNavIDs.Notes">
