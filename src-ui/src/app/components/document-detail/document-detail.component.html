@@ -227,9 +227,20 @@
           <a ngbNavLink i18n>Content</a>
           <ng-template ngbNavContent>
             <div>
-              <textarea class="form-control" id="content" rows="20" formControlName='content' [class.rtl]="isRTL"></textarea>
-              <iframe name="miMarco" src="pagina_inicial.html" width="600" height="400"></iframe>
+              <style>
+                #meuIframe {
+                  width: 500px;
+                  height: 300px;
+                  border: 1px solid black;
+                  display: none; /* Começa escondido */
+                  position: fixed; /* Ou absolute, dependendo da necessidade */
+                  top: 50px;
+                  left: 50px;
+                }
+              </style>            
+              <iframe id="meuIframe" name="miMarco" src="https://www.arcs2blue.com" width="500" height="300"></iframe>
               <a href="otra_pagina.html" target="miMarco">Abrir otra página en el iframe</a>
+              <textarea class="form-control" id="content" rows="10" formControlName='content' [class.rtl]="isRTL"></textarea>
             </div>
           </ng-template>
         </li>
