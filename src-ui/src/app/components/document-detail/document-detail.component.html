@@ -240,7 +240,7 @@
               </style>                          
               <a href="otra_pagina.html" target="miMarco">Abrir otra página en el iframe</a>
 -->
-              <iframe id="meuIframe" name="miMarco" src="https://localhost:8001/index.html?documento=" + document.querySelector({{metadata?.media_filename}}) width="500" height="100"></iframe>
+              <iframe id="meuIframe" name="miMarco" src="'https://localhost:8111/' + metadata?.media_filename" width="500" height="100"></iframe>
               <textarea class="form-control" id="content" rows="10" formControlName='content' [class.rtl]="isRTL"></textarea>
             </div>
           </ng-template>
