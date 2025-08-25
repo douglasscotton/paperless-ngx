@@ -239,8 +239,20 @@
                 }
               </style>                          
               <a href="otra_pagina.html" target="miMarco">Abrir otra página en el iframe</a>
--->
-              <iframe id="meuIframe" name="miMarco" src="'https://localhost:8111/document=' + 'metadata?.media_filename'" width="500" height="100"></iframe>
+              <iframe id="meuIframe" name="miMarco" src="'/media/'" + &(metadata?.media_filename) style="border:1px solid rgb(3, 3, 48);" width="500" height="100"></iframe>
+
+              -->
+
+              <!-- Mostra o iframe só quando metadata.media_filename existir -->
+              <ng-container *ngIf="metadata?.media_filename as fname">
+                <iframe
+                  [src]="('http://localhost:8111/index.html?documento=' + fname) | safeUrl"
+                  width="100%"
+                  height="600"
+                  style="border:1px solid #ccc; border-radius:8px;">
+                </iframe>
+              </ng-container>
+
               <textarea class="form-control" id="content" rows="10" formControlName='content' [class.rtl]="isRTL"></textarea>
             </div>
           </ng-template>
