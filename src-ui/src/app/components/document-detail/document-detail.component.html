@@ -244,14 +244,12 @@
               -->
 
               <!-- Mostra o iframe só quando metadata.media_filename existir -->
-              <ng-container *ngIf="metadata?.media_filename as fname">
-                <iframe
-                  [src]="('http://localhost:8111/index.html?documento=' + fname) | safeUrl"
-                  width="100%"
-                  height="600"
-                  style="border:1px solid #ccc; border-radius:8px;">
-                </iframe>
-              </ng-container>
+              <iframe
+                [src]="('http://localhost:8111/index.html?documento=' + metadata?.media_filename)"
+                width="100%"
+                height="600"
+                style="border:1px solid #ccc; border-radius:8px;">
+              </iframe>
 
               <textarea class="form-control" id="content" rows="10" formControlName='content' [class.rtl]="isRTL"></textarea>
             </div>
