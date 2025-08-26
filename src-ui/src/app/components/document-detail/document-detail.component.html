@@ -239,11 +239,7 @@
                 }
               </style>                          
               <a href="otra_pagina.html" target="miMarco">Abrir otra página en el iframe</a>
-              <iframe id="meuIframe" name="miMarco" src="'/media/'" + &(metadata?.media_filename) style="border:1px solid rgb(3, 3, 48);" width="500" height="100"></iframe>
 
-              -->
-
-              <!-- Mostra o iframe só quando metadata.media_filename existir -->
               <iframe
                 [src]="('http://localhost:8111/index.html?documento=' + metadata?.media_filename)"
                 width="100%"
@@ -251,6 +247,12 @@
                 style="border:1px solid #ccc; border-radius:8px;">
               </iframe>
 
+
+              -->
+
+              <!-- Mostra o iframe só quando metadata.media_filename existir -->
+
+              <iframe id="meuIframe" name="miMarco" src="('http://localhost:8111/index.html?documento=' + metadata?.media_filename)" style="border:1px solid rgb(3, 3, 48);" width="500" height="100"></iframe>
               <textarea class="form-control" id="content" rows="10" formControlName='content' [class.rtl]="isRTL"></textarea>
             </div>
           </ng-template>
