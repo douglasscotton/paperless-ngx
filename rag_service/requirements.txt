@@ -1,5 +1,5 @@
-fastapi
-uvicorn
+flask
 langchain
 langchain-community
-langchain-ollama
+faiss-cpu
+sentence-transformers

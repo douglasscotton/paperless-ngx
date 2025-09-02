@@ -366,3 +366,5 @@ admin.site.site_header = "Paperless-ngx"
 admin.site.site_title = "Paperless-ngx"
 # Text at the top of the admin index page.
 admin.site.index_title = _("Paperless-ngx administration")
+
+path("api/rag/", include("paperless.rag.urls")),
